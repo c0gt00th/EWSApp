@@ -1,0 +1,21 @@
+C:\Users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\WinForms UI\bin\Debug\WinForms UI.exe.config
+C:\Users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\WinForms UI\bin\Debug\WinForms UI.exe
+C:\Users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\WinForms UI\bin\Debug\WinForms UI.pdb
+C:\Users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\WinForms UI\obj\Debug\WinForms UI.csprojResolveAssemblyReference.cache
+C:\Users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\WinForms UI\obj\Debug\WinForms_UI.MainForm.resources
+C:\Users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\WinForms UI\obj\Debug\WinForms_UI.Properties.Resources.resources
+C:\Users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\WinForms UI\obj\Debug\WinForms UI.csproj.GenerateResource.Cache
+C:\Users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\WinForms UI\obj\Debug\WinForms UI.exe
+C:\Users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\WinForms UI\obj\Debug\WinForms UI.pdb
+C:\Users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\WinForms UI\bin\Debug\Data Access.dll
+C:\Users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\WinForms UI\bin\Debug\Microsoft.Exchange.WebServices.dll
+C:\Users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\WinForms UI\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+C:\Users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\WinForms UI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\WinForms UI\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll
+C:\Users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\WinForms UI\bin\Debug\Data Access.pdb
+C:\Users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\WinForms UI\bin\Debug\Data Access.dll.config
+C:\Users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\WinForms UI\bin\Debug\Microsoft.Exchange.WebServices.pdb
+C:\Users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\WinForms UI\bin\Debug\Microsoft.Exchange.WebServices.xml
+C:\Users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\WinForms UI\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.xml
+C:\Users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\WinForms UI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\WinForms UI\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.xml

@@ -1,0 +1,22 @@
+C:\Users\v-kyloyd\Documents\Visual Studio 2017\Projects\EWSApp\EWSApp\obj\Debug\Console UI.csprojResolveAssemblyReference.cache
+C:\Users\v-kyloyd\Documents\Visual Studio 2017\Projects\EWSApp\EWSApp\obj\Debug\EWSApp.exe
+C:\Users\v-kyloyd\Documents\Visual Studio 2017\Projects\EWSApp\EWSApp\obj\Debug\EWSApp.pdb
+C:\Users\v-kyloyd\Documents\Visual Studio 2017\Projects\EWSApp\EWSApp\bin\Debug\EWSApp.exe.config
+C:\Users\v-kyloyd\Documents\Visual Studio 2017\Projects\EWSApp\EWSApp\bin\Debug\EWSApp.exe
+C:\Users\v-kyloyd\Documents\Visual Studio 2017\Projects\EWSApp\EWSApp\bin\Debug\EWSApp.pdb
+C:\Users\v-kyloyd\Documents\Visual Studio 2017\Projects\EWSApp\EWSApp\bin\Debug\Data Access.dll
+C:\Users\v-kyloyd\Documents\Visual Studio 2017\Projects\EWSApp\EWSApp\bin\Debug\Microsoft.Exchange.WebServices.Auth.dll
+C:\Users\v-kyloyd\Documents\Visual Studio 2017\Projects\EWSApp\EWSApp\bin\Debug\Microsoft.Exchange.WebServices.dll
+C:\Users\v-kyloyd\Documents\Visual Studio 2017\Projects\EWSApp\EWSApp\bin\Debug\Microsoft.IdentityModel.Extensions.dll
+C:\Users\v-kyloyd\Documents\Visual Studio 2017\Projects\EWSApp\EWSApp\bin\Debug\Data Access.pdb
+C:\Users\v-kyloyd\Documents\Visual Studio 2017\Projects\EWSApp\EWSApp\bin\Debug\Microsoft.Exchange.WebServices.pdb
+C:\Users\v-kyloyd\Documents\Visual Studio 2017\Projects\EWSApp\EWSApp\bin\Debug\Microsoft.Exchange.WebServices.xml
+C:\Users\v-kyloyd\Documents\Visual Studio 2017\Projects\EWSApp\EWSApp\bin\Debug\Microsoft.Exchange.WebServices.Auth.pdb
+C:\Users\v-kyloyd\Documents\Visual Studio 2017\Projects\EWSApp\EWSApp\bin\Debug\Microsoft.Exchange.WebServices.Auth.xml
+C:\Users\v-kyloyd\Documents\Visual Studio 2017\Projects\EWSApp\EWSApp\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+C:\Users\v-kyloyd\Documents\Visual Studio 2017\Projects\EWSApp\EWSApp\bin\Debug\Data Access.dll.config
+C:\Users\v-kyloyd\Documents\Visual Studio 2017\Projects\EWSApp\EWSApp\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.xml
+C:\Users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\EWSApp\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll
+C:\Users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\EWSApp\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.xml
+C:\Users\v-kyloyd\Documents\Visual Studio 2017\Projects\EWSApp\EWSApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\v-kyloyd\Documents\Visual Studio 2017\Projects\EWSApp\EWSApp\bin\Debug\Newtonsoft.Json.xml

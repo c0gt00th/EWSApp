@@ -1,0 +1,13 @@
+c:\users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\EWSApp\bin\Debug\EWSApp.exe.config
+c:\users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\EWSApp\bin\Debug\EWSApp.exe
+c:\users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\EWSApp\bin\Debug\EWSApp.pdb
+c:\users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\EWSApp\bin\Debug\Microsoft.Exchange.WebServices.Auth.dll
+c:\users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\EWSApp\bin\Debug\Microsoft.Exchange.WebServices.dll
+c:\users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\EWSApp\bin\Debug\Microsoft.IdentityModel.Extensions.dll
+c:\users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\EWSApp\bin\Debug\Microsoft.Exchange.WebServices.pdb
+c:\users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\EWSApp\bin\Debug\Microsoft.Exchange.WebServices.xml
+c:\users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\EWSApp\bin\Debug\Microsoft.Exchange.WebServices.Auth.pdb
+c:\users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\EWSApp\bin\Debug\Microsoft.Exchange.WebServices.Auth.xml
+c:\users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\EWSApp\obj\Debug\EWSApp.csprojResolveAssemblyReference.cache
+c:\users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\EWSApp\obj\Debug\EWSApp.exe
+c:\users\v-kyloyd\documents\visual studio 2017\Projects\EWSApp\EWSApp\obj\Debug\EWSApp.pdb
