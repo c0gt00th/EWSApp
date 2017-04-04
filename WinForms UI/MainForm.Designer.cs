@@ -70,6 +70,12 @@ namespace WinForms_UI
             this.SaveAttachmentMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RemoveAttachmentMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CalendarTab = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.MainCalendarControl = new System.Windows.Forms.MonthCalendar();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.ScheduleTreeView = new System.Windows.Forms.TreeView();
+            this.UseStandardTimeCheckbox = new System.Windows.Forms.CheckBox();
             this.PeopleTab = new System.Windows.Forms.TabPage();
             this.CredentialsTLP = new System.Windows.Forms.TableLayoutPanel();
             this.UsernameTextboxLabel = new System.Windows.Forms.Label();
@@ -81,10 +87,6 @@ namespace WinForms_UI
             this.AdminPermTab = new System.Windows.Forms.TabPage();
             this.SaveAttachmentSFD = new System.Windows.Forms.SaveFileDialog();
             this.OpenAttachmentOFD = new System.Windows.Forms.OpenFileDialog();
-            this.MainCalendarControl = new System.Windows.Forms.MonthCalendar();
-            this.DailyTimelineTreeView = new System.Windows.Forms.TreeView();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.ContentTabControl.SuspendLayout();
             this.DelegatePermTab.SuspendLayout();
             this.DelegateTLP.SuspendLayout();
@@ -96,9 +98,10 @@ namespace WinForms_UI
             this.MessageTLP.SuspendLayout();
             this.AttachmentContextMenu.SuspendLayout();
             this.CalendarTab.SuspendLayout();
-            this.CredentialsTLP.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.CredentialsTLP.SuspendLayout();
             this.SuspendLayout();
             // 
             // ContentTabControl
@@ -112,15 +115,16 @@ namespace WinForms_UI
             this.ContentTabControl.SelectedIndex = 0;
             this.ContentTabControl.Size = new System.Drawing.Size(823, 709);
             this.ContentTabControl.TabIndex = 0;
+            this.ContentTabControl.TabStop = false;
             // 
             // DelegatePermTab
             // 
             this.DelegatePermTab.BackColor = System.Drawing.SystemColors.Control;
             this.DelegatePermTab.Controls.Add(this.DelegateTLP);
-            this.DelegatePermTab.Location = new System.Drawing.Point(4, 26);
+            this.DelegatePermTab.Location = new System.Drawing.Point(4, 21);
             this.DelegatePermTab.Margin = new System.Windows.Forms.Padding(0);
             this.DelegatePermTab.Name = "DelegatePermTab";
-            this.DelegatePermTab.Size = new System.Drawing.Size(815, 679);
+            this.DelegatePermTab.Size = new System.Drawing.Size(815, 684);
             this.DelegatePermTab.TabIndex = 0;
             this.DelegatePermTab.Text = "Delegate Permissions";
             // 
@@ -137,7 +141,7 @@ namespace WinForms_UI
             this.DelegateTLP.RowCount = 2;
             this.DelegateTLP.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.DelegateTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.DelegateTLP.Size = new System.Drawing.Size(815, 679);
+            this.DelegateTLP.Size = new System.Drawing.Size(815, 684);
             this.DelegateTLP.TabIndex = 1;
             // 
             // DelegateTabControl
@@ -151,17 +155,18 @@ namespace WinForms_UI
             this.DelegateTabControl.Name = "DelegateTabControl";
             this.DelegateTabControl.Padding = new System.Drawing.Point(0, 0);
             this.DelegateTabControl.SelectedIndex = 0;
-            this.DelegateTabControl.Size = new System.Drawing.Size(815, 579);
+            this.DelegateTabControl.Size = new System.Drawing.Size(815, 584);
             this.DelegateTabControl.TabIndex = 6;
+            this.DelegateTabControl.TabStop = false;
             // 
             // EmailTab
             // 
             this.EmailTab.BackColor = System.Drawing.SystemColors.Control;
             this.EmailTab.Controls.Add(this.MailTLP);
-            this.EmailTab.Location = new System.Drawing.Point(4, 26);
+            this.EmailTab.Location = new System.Drawing.Point(4, 21);
             this.EmailTab.Margin = new System.Windows.Forms.Padding(0);
             this.EmailTab.Name = "EmailTab";
-            this.EmailTab.Size = new System.Drawing.Size(807, 549);
+            this.EmailTab.Size = new System.Drawing.Size(807, 559);
             this.EmailTab.TabIndex = 0;
             this.EmailTab.Text = "Mail";
             // 
@@ -178,7 +183,7 @@ namespace WinForms_UI
             this.MailTLP.Name = "MailTLP";
             this.MailTLP.RowCount = 1;
             this.MailTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.MailTLP.Size = new System.Drawing.Size(807, 549);
+            this.MailTLP.Size = new System.Drawing.Size(807, 559);
             this.MailTLP.TabIndex = 0;
             // 
             // FolderViewTLP
@@ -201,7 +206,7 @@ namespace WinForms_UI
             this.FolderViewTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.FolderViewTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.FolderViewTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.FolderViewTLP.Size = new System.Drawing.Size(405, 549);
+            this.FolderViewTLP.Size = new System.Drawing.Size(405, 559);
             this.FolderViewTLP.TabIndex = 0;
             // 
             // MailFolderGoButton
@@ -213,6 +218,7 @@ namespace WinForms_UI
             this.MailFolderGoButton.Name = "MailFolderGoButton";
             this.MailFolderGoButton.Size = new System.Drawing.Size(65, 30);
             this.MailFolderGoButton.TabIndex = 28;
+            this.MailFolderGoButton.TabStop = false;
             this.MailFolderGoButton.Text = "Go";
             this.MailFolderGoButton.UseVisualStyleBackColor = true;
             this.MailFolderGoButton.Click += new System.EventHandler(this.MailFolderGoButton_Click);
@@ -224,11 +230,11 @@ namespace WinForms_UI
             this.FolderViewListbox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FolderViewListbox.Enabled = false;
             this.FolderViewListbox.FormattingEnabled = true;
-            this.FolderViewListbox.ItemHeight = 17;
+            this.FolderViewListbox.ItemHeight = 12;
             this.FolderViewListbox.Location = new System.Drawing.Point(5, 60);
             this.FolderViewListbox.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.FolderViewListbox.Name = "FolderViewListbox";
-            this.FolderViewListbox.Size = new System.Drawing.Size(395, 489);
+            this.FolderViewListbox.Size = new System.Drawing.Size(395, 499);
             this.FolderViewListbox.TabIndex = 3;
             this.FolderViewListbox.SelectedIndexChanged += new System.EventHandler(this.FolderViewListbox_SelectedIndexChanged);
             // 
@@ -238,12 +244,12 @@ namespace WinForms_UI
             this.FolderViewListContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CopyMessageIDMenuItem});
             this.FolderViewListContextMenu.Name = "FolderViewListContextMenu";
-            this.FolderViewListContextMenu.Size = new System.Drawing.Size(323, 30);
+            this.FolderViewListContextMenu.Size = new System.Drawing.Size(265, 26);
             // 
             // CopyMessageIDMenuItem
             // 
             this.CopyMessageIDMenuItem.Name = "CopyMessageIDMenuItem";
-            this.CopyMessageIDMenuItem.Size = new System.Drawing.Size(322, 26);
+            this.CopyMessageIDMenuItem.Size = new System.Drawing.Size(264, 22);
             this.CopyMessageIDMenuItem.Text = "Copy Selected Message ID.. (Ctrl+C)";
             this.CopyMessageIDMenuItem.Click += new System.EventHandler(this.CopyMessageIDMenuItem_Click);
             // 
@@ -251,10 +257,10 @@ namespace WinForms_UI
             // 
             this.FolderNameTextboxLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.FolderNameTextboxLabel.AutoSize = true;
-            this.FolderNameTextboxLabel.Location = new System.Drawing.Point(5, 25);
+            this.FolderNameTextboxLabel.Location = new System.Drawing.Point(5, 28);
             this.FolderNameTextboxLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.FolderNameTextboxLabel.Name = "FolderNameTextboxLabel";
-            this.FolderNameTextboxLabel.Size = new System.Drawing.Size(50, 19);
+            this.FolderNameTextboxLabel.Size = new System.Drawing.Size(43, 13);
             this.FolderNameTextboxLabel.TabIndex = 1;
             this.FolderNameTextboxLabel.Text = "Folder:";
             // 
@@ -262,12 +268,12 @@ namespace WinForms_UI
             // 
             this.FolderNameTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.FolderNameTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FolderNameTextbox.Location = new System.Drawing.Point(60, 22);
+            this.FolderNameTextbox.Location = new System.Drawing.Point(53, 24);
             this.FolderNameTextbox.Margin = new System.Windows.Forms.Padding(0);
             this.FolderNameTextbox.Name = "FolderNameTextbox";
             this.FolderNameTextbox.ReadOnly = true;
-            this.FolderNameTextbox.Size = new System.Drawing.Size(270, 25);
-            this.FolderNameTextbox.TabIndex = 2;
+            this.FolderNameTextbox.Size = new System.Drawing.Size(277, 21);
+            this.FolderNameTextbox.TabIndex = 3;
             // 
             // MessageTLP
             // 
@@ -323,7 +329,7 @@ namespace WinForms_UI
             this.MessageTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.MessageTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.MessageTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.MessageTLP.Size = new System.Drawing.Size(405, 549);
+            this.MessageTLP.Size = new System.Drawing.Size(405, 559);
             this.MessageTLP.TabIndex = 1;
             // 
             // MessageSenderTextbox
@@ -331,11 +337,11 @@ namespace WinForms_UI
             this.MessageSenderTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MessageTLP.SetColumnSpan(this.MessageSenderTextbox, 4);
             this.MessageSenderTextbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MessageSenderTextbox.Location = new System.Drawing.Point(84, 87);
+            this.MessageSenderTextbox.Location = new System.Drawing.Point(84, 83);
             this.MessageSenderTextbox.Margin = new System.Windows.Forms.Padding(0);
             this.MessageSenderTextbox.Name = "MessageSenderTextbox";
             this.MessageSenderTextbox.ReadOnly = true;
-            this.MessageSenderTextbox.Size = new System.Drawing.Size(316, 25);
+            this.MessageSenderTextbox.Size = new System.Drawing.Size(316, 21);
             this.MessageSenderTextbox.TabIndex = 18;
             // 
             // MessageRecipientsTextbox
@@ -343,11 +349,11 @@ namespace WinForms_UI
             this.MessageRecipientsTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MessageTLP.SetColumnSpan(this.MessageRecipientsTextbox, 4);
             this.MessageRecipientsTextbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MessageRecipientsTextbox.Location = new System.Drawing.Point(84, 114);
+            this.MessageRecipientsTextbox.Location = new System.Drawing.Point(84, 106);
             this.MessageRecipientsTextbox.Margin = new System.Windows.Forms.Padding(0);
             this.MessageRecipientsTextbox.Name = "MessageRecipientsTextbox";
             this.MessageRecipientsTextbox.ReadOnly = true;
-            this.MessageRecipientsTextbox.Size = new System.Drawing.Size(316, 25);
+            this.MessageRecipientsTextbox.Size = new System.Drawing.Size(316, 21);
             this.MessageRecipientsTextbox.TabIndex = 36;
             // 
             // NewButton
@@ -359,6 +365,7 @@ namespace WinForms_UI
             this.NewButton.Name = "NewButton";
             this.NewButton.Size = new System.Drawing.Size(75, 30);
             this.NewButton.TabIndex = 25;
+            this.NewButton.TabStop = false;
             this.NewButton.Text = "New";
             this.NewButton.UseVisualStyleBackColor = true;
             this.NewButton.Click += new System.EventHandler(this.NewButton_Click);
@@ -368,11 +375,11 @@ namespace WinForms_UI
             this.MessageSubjectTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MessageTLP.SetColumnSpan(this.MessageSubjectTextbox, 4);
             this.MessageSubjectTextbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MessageSubjectTextbox.Location = new System.Drawing.Point(84, 195);
+            this.MessageSubjectTextbox.Location = new System.Drawing.Point(84, 175);
             this.MessageSubjectTextbox.Margin = new System.Windows.Forms.Padding(0);
             this.MessageSubjectTextbox.Name = "MessageSubjectTextbox";
             this.MessageSubjectTextbox.ReadOnly = true;
-            this.MessageSubjectTextbox.Size = new System.Drawing.Size(316, 25);
+            this.MessageSubjectTextbox.Size = new System.Drawing.Size(316, 21);
             this.MessageSubjectTextbox.TabIndex = 22;
             // 
             // ReplyButton
@@ -384,6 +391,7 @@ namespace WinForms_UI
             this.ReplyButton.Name = "ReplyButton";
             this.ReplyButton.Size = new System.Drawing.Size(75, 30);
             this.ReplyButton.TabIndex = 23;
+            this.ReplyButton.TabStop = false;
             this.ReplyButton.Text = "Reply";
             this.ReplyButton.UseVisualStyleBackColor = true;
             this.ReplyButton.Click += new System.EventHandler(this.ReplyButton_Click);
@@ -393,11 +401,11 @@ namespace WinForms_UI
             this.MessageBCCTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MessageTLP.SetColumnSpan(this.MessageBCCTextbox, 4);
             this.MessageBCCTextbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MessageBCCTextbox.Location = new System.Drawing.Point(84, 168);
+            this.MessageBCCTextbox.Location = new System.Drawing.Point(84, 152);
             this.MessageBCCTextbox.Margin = new System.Windows.Forms.Padding(0);
             this.MessageBCCTextbox.Name = "MessageBCCTextbox";
             this.MessageBCCTextbox.ReadOnly = true;
-            this.MessageBCCTextbox.Size = new System.Drawing.Size(316, 25);
+            this.MessageBCCTextbox.Size = new System.Drawing.Size(316, 21);
             this.MessageBCCTextbox.TabIndex = 21;
             // 
             // ForwardButton
@@ -409,6 +417,7 @@ namespace WinForms_UI
             this.ForwardButton.Name = "ForwardButton";
             this.ForwardButton.Size = new System.Drawing.Size(75, 30);
             this.ForwardButton.TabIndex = 24;
+            this.ForwardButton.TabStop = false;
             this.ForwardButton.Text = "Forward";
             this.ForwardButton.UseVisualStyleBackColor = true;
             this.ForwardButton.Click += new System.EventHandler(this.ForwardButton_Click);
@@ -418,11 +427,11 @@ namespace WinForms_UI
             this.MessageCCTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MessageTLP.SetColumnSpan(this.MessageCCTextbox, 4);
             this.MessageCCTextbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MessageCCTextbox.Location = new System.Drawing.Point(84, 141);
+            this.MessageCCTextbox.Location = new System.Drawing.Point(84, 129);
             this.MessageCCTextbox.Margin = new System.Windows.Forms.Padding(0);
             this.MessageCCTextbox.Name = "MessageCCTextbox";
             this.MessageCCTextbox.ReadOnly = true;
-            this.MessageCCTextbox.Size = new System.Drawing.Size(316, 25);
+            this.MessageCCTextbox.Size = new System.Drawing.Size(316, 21);
             this.MessageCCTextbox.TabIndex = 19;
             // 
             // DeleteButton
@@ -434,6 +443,7 @@ namespace WinForms_UI
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(75, 30);
             this.DeleteButton.TabIndex = 30;
+            this.DeleteButton.TabStop = false;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
@@ -447,6 +457,7 @@ namespace WinForms_UI
             this.SendButton.Name = "SendButton";
             this.SendButton.Size = new System.Drawing.Size(75, 30);
             this.SendButton.TabIndex = 27;
+            this.SendButton.TabStop = false;
             this.SendButton.Text = "Send";
             this.SendButton.UseVisualStyleBackColor = true;
             this.SendButton.Click += new System.EventHandler(this.SendButton_Click);
@@ -455,10 +466,10 @@ namespace WinForms_UI
             // 
             this.MessageSubjectLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.MessageSubjectLabel.AutoSize = true;
-            this.MessageSubjectLabel.Location = new System.Drawing.Point(5, 199);
+            this.MessageSubjectLabel.Location = new System.Drawing.Point(5, 180);
             this.MessageSubjectLabel.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.MessageSubjectLabel.Name = "MessageSubjectLabel";
-            this.MessageSubjectLabel.Size = new System.Drawing.Size(79, 19);
+            this.MessageSubjectLabel.Size = new System.Drawing.Size(79, 13);
             this.MessageSubjectLabel.TabIndex = 15;
             this.MessageSubjectLabel.Text = "Subject:";
             // 
@@ -471,17 +482,17 @@ namespace WinForms_UI
             this.MessageWhenTextbox.Margin = new System.Windows.Forms.Padding(0);
             this.MessageWhenTextbox.Name = "MessageWhenTextbox";
             this.MessageWhenTextbox.ReadOnly = true;
-            this.MessageWhenTextbox.Size = new System.Drawing.Size(316, 25);
+            this.MessageWhenTextbox.Size = new System.Drawing.Size(316, 21);
             this.MessageWhenTextbox.TabIndex = 32;
             // 
             // MessageWhenLabel
             // 
             this.MessageWhenLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.MessageWhenLabel.AutoSize = true;
-            this.MessageWhenLabel.Location = new System.Drawing.Point(5, 64);
+            this.MessageWhenLabel.Location = new System.Drawing.Point(5, 65);
             this.MessageWhenLabel.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.MessageWhenLabel.Name = "MessageWhenLabel";
-            this.MessageWhenLabel.Size = new System.Drawing.Size(79, 19);
+            this.MessageWhenLabel.Size = new System.Drawing.Size(79, 13);
             this.MessageWhenLabel.TabIndex = 12;
             this.MessageWhenLabel.Text = "When: ";
             // 
@@ -489,10 +500,10 @@ namespace WinForms_UI
             // 
             this.MessageBCCLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.MessageBCCLabel.AutoSize = true;
-            this.MessageBCCLabel.Location = new System.Drawing.Point(5, 172);
+            this.MessageBCCLabel.Location = new System.Drawing.Point(5, 157);
             this.MessageBCCLabel.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.MessageBCCLabel.Name = "MessageBCCLabel";
-            this.MessageBCCLabel.Size = new System.Drawing.Size(79, 19);
+            this.MessageBCCLabel.Size = new System.Drawing.Size(79, 13);
             this.MessageBCCLabel.TabIndex = 9;
             this.MessageBCCLabel.Text = "BCC:";
             // 
@@ -500,10 +511,10 @@ namespace WinForms_UI
             // 
             this.MessageFromLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.MessageFromLabel.AutoSize = true;
-            this.MessageFromLabel.Location = new System.Drawing.Point(5, 91);
+            this.MessageFromLabel.Location = new System.Drawing.Point(5, 88);
             this.MessageFromLabel.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.MessageFromLabel.Name = "MessageFromLabel";
-            this.MessageFromLabel.Size = new System.Drawing.Size(79, 19);
+            this.MessageFromLabel.Size = new System.Drawing.Size(79, 13);
             this.MessageFromLabel.TabIndex = 4;
             this.MessageFromLabel.Text = "From: ";
             // 
@@ -511,10 +522,10 @@ namespace WinForms_UI
             // 
             this.MessageCCLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.MessageCCLabel.AutoSize = true;
-            this.MessageCCLabel.Location = new System.Drawing.Point(5, 145);
+            this.MessageCCLabel.Location = new System.Drawing.Point(5, 134);
             this.MessageCCLabel.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.MessageCCLabel.Name = "MessageCCLabel";
-            this.MessageCCLabel.Size = new System.Drawing.Size(79, 19);
+            this.MessageCCLabel.Size = new System.Drawing.Size(79, 13);
             this.MessageCCLabel.TabIndex = 8;
             this.MessageCCLabel.Text = "CC:";
             // 
@@ -522,10 +533,10 @@ namespace WinForms_UI
             // 
             this.MessageToLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.MessageToLabel.AutoSize = true;
-            this.MessageToLabel.Location = new System.Drawing.Point(5, 118);
+            this.MessageToLabel.Location = new System.Drawing.Point(5, 111);
             this.MessageToLabel.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.MessageToLabel.Name = "MessageToLabel";
-            this.MessageToLabel.Size = new System.Drawing.Size(79, 19);
+            this.MessageToLabel.Size = new System.Drawing.Size(79, 13);
             this.MessageToLabel.TabIndex = 6;
             this.MessageToLabel.Text = "To: ";
             // 
@@ -534,22 +545,22 @@ namespace WinForms_UI
             this.MessageBodyTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MessageTLP.SetColumnSpan(this.MessageBodyTextbox, 5);
             this.MessageBodyTextbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MessageBodyTextbox.Location = new System.Drawing.Point(5, 268);
+            this.MessageBodyTextbox.Location = new System.Drawing.Point(5, 234);
             this.MessageBodyTextbox.Margin = new System.Windows.Forms.Padding(0);
             this.MessageBodyTextbox.MaximumSize = new System.Drawing.Size(395, 348);
             this.MessageBodyTextbox.Multiline = true;
             this.MessageBodyTextbox.Name = "MessageBodyTextbox";
             this.MessageBodyTextbox.ReadOnly = true;
-            this.MessageBodyTextbox.Size = new System.Drawing.Size(395, 281);
+            this.MessageBodyTextbox.Size = new System.Drawing.Size(395, 325);
             this.MessageBodyTextbox.TabIndex = 14;
             // 
             // AttachedLabel
             // 
             this.AttachedLabel.AutoSize = true;
-            this.AttachedLabel.Location = new System.Drawing.Point(5, 225);
+            this.AttachedLabel.Location = new System.Drawing.Point(5, 201);
             this.AttachedLabel.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.AttachedLabel.Name = "AttachedLabel";
-            this.AttachedLabel.Size = new System.Drawing.Size(67, 19);
+            this.AttachedLabel.Size = new System.Drawing.Size(56, 13);
             this.AttachedLabel.TabIndex = 33;
             this.AttachedLabel.Text = "Attached:";
             // 
@@ -562,11 +573,11 @@ namespace WinForms_UI
             this.AttachmentsListbox.Enabled = false;
             this.AttachmentsListbox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AttachmentsListbox.FormattingEnabled = true;
-            this.AttachmentsListbox.ItemHeight = 17;
-            this.AttachmentsListbox.Location = new System.Drawing.Point(84, 222);
+            this.AttachmentsListbox.ItemHeight = 12;
+            this.AttachmentsListbox.Location = new System.Drawing.Point(84, 198);
             this.AttachmentsListbox.Margin = new System.Windows.Forms.Padding(0);
             this.AttachmentsListbox.Name = "AttachmentsListbox";
-            this.AttachmentsListbox.Size = new System.Drawing.Size(316, 36);
+            this.AttachmentsListbox.Size = new System.Drawing.Size(316, 26);
             this.AttachmentsListbox.TabIndex = 34;
             // 
             // AttachmentContextMenu
@@ -577,13 +588,13 @@ namespace WinForms_UI
             this.SaveAttachmentMenuItem,
             this.RemoveAttachmentMenuItem});
             this.AttachmentContextMenu.Name = "AttachmentContextMenu";
-            this.AttachmentContextMenu.Size = new System.Drawing.Size(287, 82);
+            this.AttachmentContextMenu.Size = new System.Drawing.Size(237, 70);
             // 
             // AttachFileMenuItem
             // 
             this.AttachFileMenuItem.Enabled = false;
             this.AttachFileMenuItem.Name = "AttachFileMenuItem";
-            this.AttachFileMenuItem.Size = new System.Drawing.Size(286, 26);
+            this.AttachFileMenuItem.Size = new System.Drawing.Size(236, 22);
             this.AttachFileMenuItem.Text = "Attach File..";
             this.AttachFileMenuItem.Click += new System.EventHandler(this.AttachFileMenuItem_Click);
             // 
@@ -591,7 +602,7 @@ namespace WinForms_UI
             // 
             this.SaveAttachmentMenuItem.Enabled = false;
             this.SaveAttachmentMenuItem.Name = "SaveAttachmentMenuItem";
-            this.SaveAttachmentMenuItem.Size = new System.Drawing.Size(286, 26);
+            this.SaveAttachmentMenuItem.Size = new System.Drawing.Size(236, 22);
             this.SaveAttachmentMenuItem.Text = "Save Attachment As..";
             this.SaveAttachmentMenuItem.Click += new System.EventHandler(this.SaveAttachmentMenuItem_Click);
             // 
@@ -599,7 +610,7 @@ namespace WinForms_UI
             // 
             this.RemoveAttachmentMenuItem.Enabled = false;
             this.RemoveAttachmentMenuItem.Name = "RemoveAttachmentMenuItem";
-            this.RemoveAttachmentMenuItem.Size = new System.Drawing.Size(286, 26);
+            this.RemoveAttachmentMenuItem.Size = new System.Drawing.Size(236, 22);
             this.RemoveAttachmentMenuItem.Text = "Remove Selected Attachment..";
             this.RemoveAttachmentMenuItem.Click += new System.EventHandler(this.RemoveAttachmentMenuItem_Click);
             // 
@@ -607,20 +618,99 @@ namespace WinForms_UI
             // 
             this.CalendarTab.BackColor = System.Drawing.SystemColors.Control;
             this.CalendarTab.Controls.Add(this.tableLayoutPanel1);
-            this.CalendarTab.Location = new System.Drawing.Point(4, 26);
+            this.CalendarTab.Location = new System.Drawing.Point(4, 21);
             this.CalendarTab.Margin = new System.Windows.Forms.Padding(0);
             this.CalendarTab.Name = "CalendarTab";
-            this.CalendarTab.Size = new System.Drawing.Size(807, 549);
+            this.CalendarTab.Size = new System.Drawing.Size(807, 559);
             this.CalendarTab.TabIndex = 1;
             this.CalendarTab.Text = "Calendar";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 270F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(807, 559);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.MainCalendarControl, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(270, 559);
+            this.tableLayoutPanel2.TabIndex = 2;
+            // 
+            // MainCalendarControl
+            // 
+            this.MainCalendarControl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.MainCalendarControl.Enabled = false;
+            this.MainCalendarControl.Location = new System.Drawing.Point(21, 0);
+            this.MainCalendarControl.Margin = new System.Windows.Forms.Padding(0);
+            this.MainCalendarControl.Name = "MainCalendarControl";
+            this.MainCalendarControl.TabIndex = 0;
+            this.MainCalendarControl.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.MainCalendarControl_DateChanged);
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.ScheduleTreeView, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.UseStandardTimeCheckbox, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(273, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(531, 553);
+            this.tableLayoutPanel3.TabIndex = 3;
+            // 
+            // ScheduleTreeView
+            // 
+            this.ScheduleTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ScheduleTreeView.Enabled = false;
+            this.ScheduleTreeView.Location = new System.Drawing.Point(0, 37);
+            this.ScheduleTreeView.Margin = new System.Windows.Forms.Padding(0, 0, 5, 5);
+            this.ScheduleTreeView.Name = "ScheduleTreeView";
+            this.ScheduleTreeView.Size = new System.Drawing.Size(526, 511);
+            this.ScheduleTreeView.TabIndex = 1;
+            // 
+            // UseStandardTimeCheckbox
+            // 
+            this.UseStandardTimeCheckbox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.UseStandardTimeCheckbox.AutoSize = true;
+            this.UseStandardTimeCheckbox.Enabled = false;
+            this.UseStandardTimeCheckbox.Location = new System.Drawing.Point(15, 10);
+            this.UseStandardTimeCheckbox.Margin = new System.Windows.Forms.Padding(15, 10, 3, 10);
+            this.UseStandardTimeCheckbox.Name = "UseStandardTimeCheckbox";
+            this.UseStandardTimeCheckbox.Size = new System.Drawing.Size(104, 17);
+            this.UseStandardTimeCheckbox.TabIndex = 2;
+            this.UseStandardTimeCheckbox.Text = "Standard Time?";
+            this.UseStandardTimeCheckbox.UseVisualStyleBackColor = true;
             // 
             // PeopleTab
             // 
             this.PeopleTab.BackColor = System.Drawing.SystemColors.Control;
-            this.PeopleTab.Location = new System.Drawing.Point(4, 26);
+            this.PeopleTab.Location = new System.Drawing.Point(4, 21);
             this.PeopleTab.Margin = new System.Windows.Forms.Padding(0);
             this.PeopleTab.Name = "PeopleTab";
-            this.PeopleTab.Size = new System.Drawing.Size(807, 549);
+            this.PeopleTab.Size = new System.Drawing.Size(807, 554);
             this.PeopleTab.TabIndex = 2;
             this.PeopleTab.Text = "People";
             // 
@@ -655,10 +745,10 @@ namespace WinForms_UI
             this.UsernameTextboxLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UsernameTextboxLabel.AutoSize = true;
-            this.UsernameTextboxLabel.Location = new System.Drawing.Point(5, 24);
+            this.UsernameTextboxLabel.Location = new System.Drawing.Point(5, 26);
             this.UsernameTextboxLabel.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
             this.UsernameTextboxLabel.Name = "UsernameTextboxLabel";
-            this.UsernameTextboxLabel.Size = new System.Drawing.Size(80, 19);
+            this.UsernameTextboxLabel.Size = new System.Drawing.Size(80, 13);
             this.UsernameTextboxLabel.TabIndex = 0;
             this.UsernameTextboxLabel.Text = "Username:";
             // 
@@ -669,12 +759,12 @@ namespace WinForms_UI
             this.PasswordTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CredentialsTLP.SetColumnSpan(this.PasswordTextbox, 2);
             this.PasswordTextbox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordTextbox.Location = new System.Drawing.Point(85, 49);
+            this.PasswordTextbox.Location = new System.Drawing.Point(85, 45);
             this.PasswordTextbox.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.PasswordTextbox.Name = "PasswordTextbox";
             this.PasswordTextbox.PasswordChar = '*';
-            this.PasswordTextbox.Size = new System.Drawing.Size(200, 27);
-            this.PasswordTextbox.TabIndex = 8;
+            this.PasswordTextbox.Size = new System.Drawing.Size(200, 23);
+            this.PasswordTextbox.TabIndex = 2;
             this.PasswordTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PasswordTextbox_KeyDown);
             // 
             // UsernameTextbox
@@ -688,19 +778,20 @@ namespace WinForms_UI
             this.UsernameTextbox.Location = new System.Drawing.Point(85, 20);
             this.UsernameTextbox.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.UsernameTextbox.Name = "UsernameTextbox";
-            this.UsernameTextbox.Size = new System.Drawing.Size(200, 27);
-            this.UsernameTextbox.TabIndex = 7;
+            this.UsernameTextbox.Size = new System.Drawing.Size(200, 23);
+            this.UsernameTextbox.TabIndex = 1;
             // 
             // LoginButton
             // 
             this.LoginButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.LoginButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.LoginButton.Location = new System.Drawing.Point(295, 30);
+            this.LoginButton.Location = new System.Drawing.Point(295, 26);
             this.LoginButton.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.LoginButton.Name = "LoginButton";
             this.CredentialsTLP.SetRowSpan(this.LoginButton, 2);
             this.LoginButton.Size = new System.Drawing.Size(100, 35);
             this.LoginButton.TabIndex = 4;
+            this.LoginButton.TabStop = false;
             this.LoginButton.Text = "Login";
             this.LoginButton.UseVisualStyleBackColor = false;
             this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
@@ -708,10 +799,10 @@ namespace WinForms_UI
             // PasswordTextboxLabel
             // 
             this.PasswordTextboxLabel.AutoSize = true;
-            this.PasswordTextboxLabel.Location = new System.Drawing.Point(5, 53);
+            this.PasswordTextboxLabel.Location = new System.Drawing.Point(5, 49);
             this.PasswordTextboxLabel.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
             this.PasswordTextboxLabel.Name = "PasswordTextboxLabel";
-            this.PasswordTextboxLabel.Size = new System.Drawing.Size(70, 19);
+            this.PasswordTextboxLabel.Size = new System.Drawing.Size(59, 13);
             this.PasswordTextboxLabel.TabIndex = 10;
             this.PasswordTextboxLabel.Text = "Password:";
             // 
@@ -720,18 +811,18 @@ namespace WinForms_UI
             this.ErrorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.ErrorLabel.AutoSize = true;
             this.ErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.ErrorLabel.Location = new System.Drawing.Point(195, 78);
+            this.ErrorLabel.Location = new System.Drawing.Point(195, 77);
             this.ErrorLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.ErrorLabel.Name = "ErrorLabel";
-            this.ErrorLabel.Size = new System.Drawing.Size(80, 19);
+            this.ErrorLabel.Size = new System.Drawing.Size(80, 13);
             this.ErrorLabel.TabIndex = 9;
             // 
             // AdminPermTab
             // 
-            this.AdminPermTab.Location = new System.Drawing.Point(4, 26);
+            this.AdminPermTab.Location = new System.Drawing.Point(4, 21);
             this.AdminPermTab.Margin = new System.Windows.Forms.Padding(0);
             this.AdminPermTab.Name = "AdminPermTab";
-            this.AdminPermTab.Size = new System.Drawing.Size(815, 679);
+            this.AdminPermTab.Size = new System.Drawing.Size(815, 684);
             this.AdminPermTab.TabIndex = 1;
             this.AdminPermTab.Text = "Admin Permissions";
             this.AdminPermTab.UseVisualStyleBackColor = true;
@@ -740,61 +831,12 @@ namespace WinForms_UI
             // 
             this.SaveAttachmentSFD.SupportMultiDottedExtensions = true;
             // 
-            // MainCalendarControl
-            // 
-            this.MainCalendarControl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.MainCalendarControl.Location = new System.Drawing.Point(4, 0);
-            this.MainCalendarControl.Margin = new System.Windows.Forms.Padding(0);
-            this.MainCalendarControl.Name = "MainCalendarControl";
-            this.MainCalendarControl.TabIndex = 0;
-            this.MainCalendarControl.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.MainCalendarControl_DateChanged);
-            // 
-            // DailyTimelineTreeView
-            // 
-            this.DailyTimelineTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DailyTimelineTreeView.Location = new System.Drawing.Point(270, 0);
-            this.DailyTimelineTreeView.Margin = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.DailyTimelineTreeView.Name = "DailyTimelineTreeView";
-            this.DailyTimelineTreeView.Size = new System.Drawing.Size(532, 544);
-            this.DailyTimelineTreeView.TabIndex = 1;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 270F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.DailyTimelineTreeView, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(807, 549);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.Controls.Add(this.MainCalendarControl, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(270, 549);
-            this.tableLayoutPanel2.TabIndex = 2;
-            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(824, 708);
+            this.ClientSize = new System.Drawing.Size(824, 709);
             this.Controls.Add(this.ContentTabControl);
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -814,10 +856,12 @@ namespace WinForms_UI
             this.MessageTLP.PerformLayout();
             this.AttachmentContextMenu.ResumeLayout(false);
             this.CalendarTab.ResumeLayout(false);
-            this.CredentialsTLP.ResumeLayout(false);
-            this.CredentialsTLP.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            this.CredentialsTLP.ResumeLayout(false);
+            this.CredentialsTLP.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -874,10 +918,12 @@ namespace WinForms_UI
         private System.Windows.Forms.TextBox MessageSenderTextbox;
         private System.Windows.Forms.TextBox MessageRecipientsTextbox;
         private System.Windows.Forms.ToolStripMenuItem RemoveAttachmentMenuItem;
-        private System.Windows.Forms.TreeView DailyTimelineTreeView;
+        private System.Windows.Forms.TreeView ScheduleTreeView;
         private System.Windows.Forms.MonthCalendar MainCalendarControl;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.CheckBox UseStandardTimeCheckbox;
     }
 }
 

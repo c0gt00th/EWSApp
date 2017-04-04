@@ -1,4 +1,5 @@
 ﻿using Data_Access;
+using Data_Access.Models.View_Models.Calendar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -78,6 +79,7 @@ namespace WinForms_UI
             ErrorLabel.Text = string.Empty;
 
             LoadMailEnvironment();
+            LoadCalendarEnvironment();
         }
 
         private void PasswordTextbox_KeyDown(object sender, KeyEventArgs e)
@@ -492,17 +494,61 @@ namespace WinForms_UI
 
         #region Calendar-Related Methods
 
+        private void LoadCalendarEnvironment()
+        {
+            MainCalendarControl.Enabled = true;
+            ScheduleTreeView.Enabled = true;
+            UseStandardTimeCheckbox.Enabled = true;
+
+            var initialDate = DateTime.Now.Date;
+
+            MainCalendarControl.SetDate(initialDate);
+        }
+
         private void MainCalendarControl_DateChanged(object sender, DateRangeEventArgs e)
         {
             var start = MainCalendarControl.SelectionRange.Start;
             var end = MainCalendarControl.SelectionRange.End;
+            api.LoadCalendarEventsWithinRange(start, end);
+
+            ScheduleTreeView.Nodes.Clear();
+
             if (start != end)
             {
-                //Date Range Operations
+                var iterativeDate = start.Date;
+                while (iterativeDate.Date != end.AddDays(1).Date)
+                {
+                    PopulateScheduleForDate(iterativeDate);
+                    iterativeDate = iterativeDate.AddDays(1);
+                }
                 return;
             }
 
+            PopulateScheduleForDate(start.Date);
+        }
 
+        private void PopulateScheduleForDate(DateTime start)
+        {
+            var orderedList = api.CurrentEvents.Where(y => y.Start.Date == start.Date).OrderBy(x => x.Start).ToList();
+            var dateNode = new TreeNode(start.Date.ToString());
+
+            foreach(var calendarEvent in orderedList)
+            {
+                var eventNode = new TreeNode($"{calendarEvent.Type} @ {calendarEvent.Start.TimeOfDay}");
+
+                eventNode.Nodes.Add($"Subject: {calendarEvent.Subject}");
+                eventNode.Nodes.Add($"Where: {calendarEvent.Where}");
+
+                if (calendarEvent.Type == CalendarEventType.Meeting)
+                {
+                    eventNode.Nodes.Add($"Required Attendees: {calendarEvent.RequiredAttendees}");
+                    eventNode.Nodes.Add($"Optional Attendees: {calendarEvent.OptionalAttendees}");
+                }
+
+                dateNode.Nodes.Add(eventNode);
+            }
+
+            ScheduleTreeView.Nodes.Add(dateNode);
         }
 
         #endregion

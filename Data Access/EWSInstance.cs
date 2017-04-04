@@ -8,22 +8,29 @@ using System.Linq;
 using System.Net;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
+using Data_Access.Models.View_Models.Calendar;
 
 namespace Data_Access
 {
     public class EWSInstance
     {
         public List<string> _pendingAttachments { get; set; }
+        public ExchangeService _service { get; set; }
 
-        public ExchangeService Service { get; set; }
+        //Mail Objects
+
         public List<string> CurrentItems { get; set; }
         public MailMessage CurrentMessage { get; set; }
+
+        //Calendar Objects
+        public List<ExistingCalendarEvent> CurrentEvents { get; set; }
 
         public EWSInstance(string email, string password)
         {
             CurrentItems = new List<string>();
+            CurrentEvents = new List<ExistingCalendarEvent>();
 
-            Service = new ExchangeService(ExchangeVersion.Exchange2013_SP1)
+            _service = new ExchangeService(ExchangeVersion.Exchange2013_SP1)
             {
                 Credentials = new WebCredentials(email, password),
                 EnableScpLookup = false,
@@ -31,13 +38,7 @@ namespace Data_Access
             };
         }
 
-        #region Service Setup Methods
-
-        
-
-        
-
-        #endregion
+        #region Mail-Related Methods
 
         #region Loading Methods
 
@@ -53,7 +54,7 @@ namespace Data_Access
                 Traversal = FolderTraversal.Deep
             };
 
-            var findFolderResults = Service.FindFolders(WellKnownFolderName.Root, view);
+            var findFolderResults = _service.FindFolders(WellKnownFolderName.Root, view);
             //find specific folder
             var targetFolder = findFolderResults.Where(x => x.DisplayName == folder);
             if (targetFolder.Count() > 0)
@@ -88,7 +89,7 @@ namespace Data_Access
             _pendingAttachments = new List<string>();
             var ps = new PropertySet(BasePropertySet.FirstClassProperties, ItemSchema.Attachments);
             ps.RequestedBodyType = BodyType.Text;
-            CurrentMessage = new MailMessage(EmailMessage.Bind(Service, new ItemId(id),ps));
+            CurrentMessage = new MailMessage(EmailMessage.Bind(_service, new ItemId(id),ps));
         }
 
         #endregion
@@ -99,12 +100,12 @@ namespace Data_Access
         {
             var newMessage = new NewEmail(details["Sender"], details["CC"], details["BCC"], details["Subject"], details["Body"], _pendingAttachments);
 
-            newMessage.SendNewMail(Service);
+            newMessage.SendNewMail(_service);
         }
 
         public void DeleteEmail(string id)
         {
-            var msg = EmailMessage.Bind(Service, id);
+            var msg = EmailMessage.Bind(_service, id);
             msg.Delete(DeleteMode.MoveToDeletedItems);
         }
 
@@ -126,6 +127,28 @@ namespace Data_Access
         public void RemoveAttachment(string filename)
         {
             _pendingAttachments = _pendingAttachments.Where(x => x != filename).ToList();
+        }
+
+        #endregion
+
+        #endregion
+
+        #region Calendar-Related Methods
+
+        public void LoadCalendarEventsWithinRange(DateTime start, DateTime end)
+        {
+            CurrentEvents = new List<ExistingCalendarEvent>();
+
+            var calendar = CalendarFolder.Bind(_service, WellKnownFolderName.Calendar, new PropertySet());
+            var cView = new CalendarView(start, end, 200);
+            cView.PropertySet = new PropertySet(BasePropertySet.FirstClassProperties);
+            var appointments = calendar.FindAppointments(cView);
+
+            foreach (var appointment in appointments)
+            {
+                appointment.Load();
+                CurrentEvents.Add(new ExistingCalendarEvent(appointment));
+            }
         }
 
         #endregion

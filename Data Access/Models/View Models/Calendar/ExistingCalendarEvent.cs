@@ -5,12 +5,11 @@ namespace Data_Access.Models.View_Models.Calendar
 {
     public class ExistingCalendarEvent
     {
-        private DateTime _start;
-        private DateTime _end;
-
+        public string Id { get; set; }
         public string Subject { get; set; }
         public string Body { get; set; }
-        public string When { get; set; }
+        public DateTime Start { get; set; }
+        public DateTime End { get; set; }
         public string Where { get; set; }
         public bool IsAllDay { get; set; }
         public CalendarEventType Type { get; set; }
@@ -19,23 +18,13 @@ namespace Data_Access.Models.View_Models.Calendar
 
         public ExistingCalendarEvent(Appointment appointment)
         {
-            _start = appointment.Start;
-            _end = appointment.End;
-
+            Id = appointment.Id.ToString();
             Subject = appointment.Subject;
             Body = appointment.Body;
+            Start = appointment.Start;
+            End = appointment.End;
             Where = appointment.Location;
             IsAllDay = appointment.IsAllDayEvent;
-
-            if (IsAllDay)
-            {
-                When = $"{_start.Date} - All Day Event";
-            }
-
-            else
-            {
-                When = $"{_start.Date}: {_start.TimeOfDay} - {_end.TimeOfDay}";
-            }
 
             if (appointment.OptionalAttendees.Count > 0 || appointment.RequiredAttendees.Count > 1)
             {

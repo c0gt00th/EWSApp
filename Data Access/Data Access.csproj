@@ -70,7 +70,7 @@
     <Compile Include="Models\Create Models\NewCalendarEvent.cs" />
     <Compile Include="Models\Create Models\NewEmail.cs" />
     <Compile Include="Models\View Models\Calendar\Calendar.cs" />
-    <Compile Include="Models\View Models\Calendar\CalendarEvent.cs" />
+    <Compile Include="Models\View Models\Calendar\ExistingCalendarEvent.cs" />
     <Compile Include="Models\View Models\Email\Inbox.cs" />
     <Compile Include="Models\View Models\Email\MailMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
